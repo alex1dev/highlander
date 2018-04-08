@@ -46,13 +46,15 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
+            
+            {% if user.is_authenticated %}
+                        <li class="nav-item">
               <a class="nav-link" href="booking.html">Booking</a>
             </li>
-            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </li>
+
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -63,8 +65,8 @@
       </div>
     </nav>
 
-    <header style="background-image: url({% static 'images/13.jpg' %}); background-position: center; background-size: cover; background-repeat: no-repeat; color:white; padding-top: 150px; height: 100vh; color: white; text-align: center;">
-      <div class='cont'>
+    <header style="background-image: url({% static 'images/13.jpg' %}); background-position: center; background-size: cover; background-repeat: no-repeat; padding-top: 150px; height: 100vh; color: white; text-align: center;">
+      <div class='cont' style="font-size: 28px; font-weight: bold; color:#191919">
       +49 123 4567 8910 <br/>
       +49 123 4567 9112 <br/><br/>
 
@@ -77,12 +79,12 @@
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
+      <div class="copyright">
+          <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
           This is just an example of web-site using django.<br/>
           For further details please contact <br/>
-          alexander.w.jv@gmail.com <br/><br/>2018</p>
-      </div>
+          norvux@protonmail.com or refer to the <a href="https://nordev.pythonanywhere.com">nordev.pythonanywhere.com</a><br/><br/>2018</p>
+        </div>  
       <!-- /.container -->
     </footer>
 

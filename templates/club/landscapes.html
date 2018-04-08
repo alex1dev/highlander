@@ -26,7 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Highlander</a>
+        <a class="navbar-brand" href="{% url 'index' %}">Highlander</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,20 +36,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="hotel.html">Hotel
+              <a class="nav-link" href="{% url 'hotel' %}">Hotel
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="landscapes.html">Landscapes</a>
+              <a class="nav-link" href="{% url 'landscapes' %}">Landscapes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="booking.html">Booking</a>
-            </li>
+            
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'booking' %}">Booking</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </li>
@@ -108,12 +109,12 @@
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
+      <div class="copyright">
+          <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
           This is just an example of web-site using django.<br/>
           For further details please contact <br/>
-          alexander.w.jv@gmail.com <br/><br/>2018</p>
-      </div>
+          norvux@protonmail.com or refer to the <a href="https://nordev.pythonanywhere.com">nordev.pythonanywhere.com</a> <br/><br/>2018</p>
+        </div>  
       <!-- /.container -->
     </footer>
 

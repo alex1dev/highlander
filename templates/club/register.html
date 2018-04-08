@@ -46,10 +46,10 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
-            <li class="nav-item">
+            
+            {% if user.is_authenticated %}<li class="nav-item">
               <a class="nav-link" href="booking.html">Booking</a>
             </li>
-            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             </li>
@@ -66,9 +66,11 @@
 
 
     <div id='wrapper' style="text-align: center; height: 100vh;">
-      <div style='display: inline-block;'>
+      <div style='display: inline-block; margin-top: 80px;'>
       {% if registered %}
-      <strong>Thank You staying with us!<br/></strong>
+      <strong>Thank You being with us!<br/></strong>
+      <p>This is an example web-site, created using Django + Bootstrap.
+      Interested? Please refer to <a href="https://nordev.pythonanywhere.com">nordev@pythonanywhere.com</a></p>
       <a href='index.html'><button>Return to homepage</button></a>
       {% else %}
       <form id='user_form' method='post' action='{% url "register" %}' enctype="multipart/form-data">
@@ -87,12 +89,12 @@
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
+     <div class="copyright">
+          <p class="m-0 text-center text-white">Nord Dev &copy; <br/> 
           This is just an example of web-site using django.<br/>
           For further details please contact <br/>
-          alexander.w.jv@gmail.com <br/><br/>2018</p>
-      </div>
+          norvux@protonmail.com or refer to the <a href="https://nordev.pythonanywhere.com">nordev.pythonanywhere.com</a> <br/><br/>2018</p>
+        </div>  
       <!-- /.container -->
     </footer>
 
